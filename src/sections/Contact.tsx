@@ -16,9 +16,9 @@ export const ContactSection = () => {
             ></div>
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center relative z-10">
               <div>
-                <h2 className="font-serif text-2xl md:text-3xl">Let's create something amazing together</h2>
+                <h2 className="font-serif text-2xl md:text-3xl">Let&apos;s create something amazing together</h2>
                 <p className="text-sm md:text-base mt-2">
-                  Got a cool idea, an internship opportunity, or just want to talk about shared interests? I'm all ears - feel free to get in touch!
+                  Got a cool idea, an internship opportunity, or just want to talk about shared interests? I&apos;m all ears - feel free to get in touch!
                 </p>
               </div>
               <div>

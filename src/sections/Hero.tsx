@@ -69,7 +69,7 @@ export const HeroSection = () => {
         <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">Kunal Sachdev</h1>
         <h2 className="font-serif text-xl md:text-xl text-center mt-8 tracking-wide">Data Science | AI/ML | Backend | Full-Stack</h2>
         <p className="mt-4 text-center text-white/60 md:text-lg">
-          Bachelor's in Computer Science with Minors in Statistics and Economics @ University of Waterloo.
+          Bachelor&apos;s in Computer Science with Minors in Statistics and Economics @ University of Waterloo.
         </p>
         </div>
         <div className="flex flex-col md:flex-row  justify-center items-center mt-8 gap-4">
