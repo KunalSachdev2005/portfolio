@@ -49,7 +49,7 @@ export const HeroSection = () => {
         <StarIcon className="size-28 text-emerald-300" />
       </HeroOrbit>
       </div>
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex flex-col items-center">
           <Image
             src={ memojiImage }
@@ -73,14 +73,19 @@ export const HeroSection = () => {
         </p>
         </div>
         <div className="flex flex-col md:flex-row  justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <a href="#projects" className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
             <span className="font-semibold">Explore my work</span>
             <ArrowDown className="size-4" />
-          </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl"
+          >
             <span>📄</span>
             <span className="font-semibold">View My Resume</span>
-          </button>
+          </a>
         </div>
       </ div>
     </ div>
