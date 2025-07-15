@@ -2,9 +2,9 @@
 
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import bookImage from "@/assets/images/book-cover-2.png";
+import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
-import mapImage from "@/assets/images/map2.jpg";
+import mapImage from "@/assets/images/map.jpg";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";

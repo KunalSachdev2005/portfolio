@@ -4,7 +4,7 @@ import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import edelweissLogo from "@/assets/images/edelweiss.png";
 import infoOriginLogo from "@/assets/images/infoorigin.png";
-import hdfcLogo from "@/assets/images/hdfc1.png";
+import hdfcLogo from "@/assets/images/hdfc.png";
 import { Card } from "@/components/Card";
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
