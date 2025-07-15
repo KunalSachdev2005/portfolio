@@ -50,7 +50,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 md:mb-40 sm:mb-40 lg:py-24 lg:mb-0">
+    <section className="pb-16 md:mb-40 sm:mb-40 lg:py-32 lg:mb-0">
       <div className="container">
         <div className="flex justify-center">
           <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">Exploring Technologies</p>

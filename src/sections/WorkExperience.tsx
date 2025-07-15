@@ -83,7 +83,7 @@ export const WorkExperienceSection = () => {
   const isLargeScreen = useIsLargeScreen();
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 relative">
+    <section ref={sectionRef} className="py-2 relative">
       <div className="container">
         <SectionHeader
           eyebrow="Experience"
