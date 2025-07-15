@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
-import edelweissLogo from "@/assets/images/edelweiss.png";
-import infoOriginLogo from "@/assets/images/infoorigin.png";
+import edelweissLogo from "@/assets/images/edelweiss3.jpg";
+import infoOriginLogo from "@/assets/images/infoorigin1.jpeg";
 import hdfcLogo from "@/assets/images/hdfc.png";
 import { Card } from "@/components/Card";
 import { motion } from 'framer-motion';
@@ -17,7 +17,10 @@ const experiences = [
     company: "Edelweiss Life Insurance",
     title: "GenAI Engineer Intern",
     date: "May 2025 - Aug 2025",
+    year: "2025",
     location: "Mumbai, India",
+    width: 200,
+    height: 200,
     logo: edelweissLogo,
     bullets: [
       "Enabled dynamic enterprise insights with a serverless RAG app using Claude 3.5 Sonnet on AWS Bedrock.",
@@ -32,6 +35,9 @@ const experiences = [
     company: "Info Origin Inc.",
     title: "Data Science Intern",
     date: "May 2024 - Aug 2024",
+    year: "2024",
+    width: 150,
+    height: 100,
     location: "Remote",
     logo: infoOriginLogo,
     bullets: [
@@ -44,7 +50,10 @@ const experiences = [
     company: "HDFC ERGO General Insurance",
     title: "Software Developer Intern",
     date: "Apr 2022 - Jun 2022",
+    year: "2022",
     location: "Mumbai, India",
+    width: 100,
+    height: 100,
     logo: hdfcLogo,
     bullets: [
       "Built Flask-based Python API to clean, encrypt, and store Excel premium quotes in Oracle DB.",
@@ -83,7 +92,7 @@ export const WorkExperienceSection = () => {
   const isLargeScreen = useIsLargeScreen();
 
   return (
-    <section ref={sectionRef} className="py-2 relative">
+    <section ref={sectionRef} className="sm:mb-20 md:mb-20 lg:mb-1 lg:py-2 relative">
       <div className="container">
         <SectionHeader
           eyebrow="Experience"
@@ -118,13 +127,16 @@ export const WorkExperienceSection = () => {
                   {/* Timeline Dot and Logo on Left */}
                   <div className="hidden lg:flex col-span-1 justify-start lg:justify-center relative">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 z-0 border-1 border-emerald-400 flex items-center justify-center overflow-hidden">
-                      <Image
+                      {/*<Image
                         src={exp.logo}
                         alt={`${exp.company} logo`}
                         width={36}
                         height={36}
                         className="object-contain -z-50"
-                      />
+                      />*/}
+                      <span className="leading-tight text-black font-semibold">
+                        {exp.year}
+                      </span>
                     </div>
                   </div>
               
@@ -134,18 +146,29 @@ export const WorkExperienceSection = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 90 }}
                     >
-                      <Card className="p-6 shadow-md md:ml-20 lg:ml-10">
-                        <div className="flex items-center justify-start gap-3 mb-2">
-                          <h3 className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
-                            {exp.title}
-                          </h3>
+                      <Card className="p-6 shadow-md md:ml-20 lg:ml-10 relative">
+                        <div className="flex items-start mb-2">
+                          <div>
+                            <h3 className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
+                              {exp.title}
+                            </h3>
+                            <p className="text-base text-white mb-2 font-semibold">
+                              {exp.company}
+                            </p>
+                            <p className="text-sm text-white/60">
+                              {exp.date} | {exp.location}
+                            </p>
+                          </div>
+                          <div className="ml-auto flex flex-col items-center h-full">
+                            <Image
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                              width={exp.width}
+                              height={exp.height}
+                              className="object-contain"
+                            />
+                          </div>
                         </div>
-                        <p className="text-base text-white mb-2 font-semibold">
-                          {exp.company}
-                        </p>
-                        <p className="text-sm text-white/60">
-                          {exp.date} | {exp.location}
-                        </p>
                         <hr className="my-4 border-white/10" />
                         <ul className="list-disc pl-6 space-y-2 text-white/80">
                           {exp.bullets.map((b, i) => (

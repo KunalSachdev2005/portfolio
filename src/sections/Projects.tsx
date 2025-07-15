@@ -50,16 +50,16 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 md:mb-40 sm:mb-40 lg:py-32 lg:mb-0">
+    <section className="pb-48 md:mb-16 sm:mb-15 lg:py-32 lg:mb-0 lg:pb-30">
       <div className="container">
         <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">Exploring Technologies</p>
+          <p className="lg:mt-0 mt-10 uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">Exploring Technologies</p>
         </div>
         <h1 className="font-serif text-3xl md:text-5xl text-center mt-6">Featured Projects</h1>
         <p className="text-center md:text-lg lg:text-xl text-white/60 mt-4 max-w-md mx-auto">
           Constantly learning, experimenting, and evolving with every line of code.
         </p>
-        <div className="flex flex-col mt-10 gap-20 md:mt-20">
+        <div className="flex flex-col mt-0 md:mt-0 lg:mt-10 gap-7">
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
