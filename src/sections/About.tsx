@@ -27,6 +27,8 @@ import MysqlIcon from "@/assets/icons/MySQL.svg";
 import SqliteIcon from "@/assets/icons/SQLite.svg";
 import Db2Icon from "@/assets/icons/IBM_Db2.svg";
 import OracleIcon from "@/assets/icons/Oracle.svg";
+import RedShiftIcon from "@/assets/icons/Redshift.svg";
+import OpenSearchIcon from "@/assets/icons/OpenSearch_Service.svg";
 import JupyterIcon from "@/assets/icons/Jupyter.svg";
 import ScikitLearnIcon from "@/assets/icons/Scikit-learn.svg";
 import HuggingFaceIcon from "@/assets/icons/HuggingFace.svg";
@@ -72,6 +74,8 @@ const toolboxItems2 = [
   { title: "SQLite", iconType: SqliteIcon },
   { title: "IBM Db2", iconType: Db2Icon },
   { title: "Oracle", iconType: OracleIcon },
+  { title: "RedShift", iconType: RedShiftIcon },
+  { title: "OpenSearch", iconType: OpenSearchIcon },
 ];
 
 const toolboxItems3 = [
@@ -183,10 +187,10 @@ export const AboutSection = () => {
                 description="Explore the technologies and tools I have used in my internships and personal projects."
                 className=""
                 />
-              <ToolboxItems items={toolboxItems1} className="" itemsWrapperClassName="animate-move-right [animation-duration:20s]" />
-              <ToolboxItems items={toolboxItems2} className="mt-6" itemsWrapperClassName="animate-move-left [animation-duration:20s]" />
-              <ToolboxItems items={toolboxItems4} className="mt-6" itemsWrapperClassName="animate-move-right [animation-duration:20s]" />    
-              <ToolboxItems items={toolboxItems3} className="mt-6" itemsWrapperClassName="animate-move-left [animation-duration:25s]" />    
+              <ToolboxItems items={toolboxItems1} className="" itemsWrapperClassName="animate-move-right [animation-duration:25s]" />
+              <ToolboxItems items={toolboxItems2} className="mt-6" itemsWrapperClassName="animate-move-left [animation-duration:35s]" />
+              <ToolboxItems items={toolboxItems4} className="mt-6" itemsWrapperClassName="animate-move-right [animation-duration:25s]" />    
+              <ToolboxItems items={toolboxItems3} className="mt-6" itemsWrapperClassName="animate-move-left [animation-duration:35s]" />    
             </Card>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
@@ -221,7 +225,7 @@ export const AboutSection = () => {
                 alt="Map"
                 className="h-full w-full object-cover object-left-top"
               />
-              <div className="absolute top-[70%] md:top-[60%] lg:top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 
+              <div className="absolute top-[70%] md:top-[60%] lg:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 
               rounded-full after:content-[''] after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>

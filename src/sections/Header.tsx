@@ -43,7 +43,7 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "projects", "about", "contact"];
+      const sections = ["home", "experience", "projects", "about", "contact"];
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -101,7 +101,7 @@ export const Header = () => {
 
   const getNavItemClasses = (sectionId: string) => {
     const baseClasses =
-      "nav-item px-4 py-2 rounded-full transition-colors duration-200";
+      "nav-item px-2.5 md:px-4 py-2 rounded-full transition-colors duration-200";
 
     const activeClasses =
       "bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900";
@@ -115,37 +115,25 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex justify-center items-center fixed top-3 w-full z-10">
-      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
+    <div className="flex justify-center items-center fixed top-3 w-full z-50">
+      <nav className="flex max-w-[90%] md:gap-3 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur-md md:max-w-full">
+      {[
+        { id: "home", label: "Home" },
+        { id: "experience", label: "Work" },
+        { id: "projects", label: "Projects" },
+        { id: "about", label: "About" },
+        { id: "contact", label: "Contact" },
+      ].map(({ id, label }) => (
         <a
-          href="#home"
-          className={getNavItemClasses("home")}
-          onClick={(e) => handleScrollToSection(e, "home")}
+          key={id}
+          href={`#${id}`}
+          className={`${getNavItemClasses(id)}`}
+          onClick={(e) => handleScrollToSection(e, id)}
         >
-          Home
+          {label}
         </a>
-        <a
-          href="#projects"
-          className={getNavItemClasses("projects")}
-          onClick={(e) => handleScrollToSection(e, "projects")}
-        >
-          Projects
-        </a>
-        <a
-          href="#about"
-          className={getNavItemClasses("about")}
-          onClick={(e) => handleScrollToSection(e, "about")}
-        >
-          About
-        </a>
-        <a
-          href="#contact"
-          className={getNavItemClasses("contact")}
-          onClick={(e) => handleScrollToSection(e, "contact")}
-        >
-          Contact
-        </a>
-      </nav>
+      ))}
+    </nav>
     </div>
   );
 };

@@ -12,9 +12,9 @@ const portfolioProjects = [
     year: "2025",
     title: "Car Dealership Full-Stack Application",
     results: [
-      { title: "Car Dealership Website: React frontend; Django + SQLite backend." },
-      { title: "Dealership and reviews service (Express.js + MongoDB + Docker) for serving dealer listings and customer reviews via RESTful APIs." },
-      { title: "Customer sentiment analyzer microservice hosted on IBM Cloud Code Engine" },
+      { title: "Dealership Website: React frontend; Django + SQLite backend." },
+      { title: "Dealership and reviews service (Express.js + MongoDB + Docker), serving dealer listings/reviews via RESTful APIs." },
+      { title: "Reviews sentiment analyzer microservice hosted on IBM." },
       { title: "CI/CD pipeline: GitHub Actions; App Deployment: Kubernetes." },
     ],
     link: "https://github.com/KunalSachdev2005/Car_Dealership_Full_Stack_Application",
@@ -63,7 +63,7 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 lg:sticky"
+              className="px-8 pt-8 mb-2 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 lg:sticky"
               style={{
                 top: `calc(64px + ${projectIndex * 40}px)`,
               }}
