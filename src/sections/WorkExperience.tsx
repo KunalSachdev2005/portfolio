@@ -14,23 +14,35 @@ import { useEffect, useState } from 'react';
 
 const experiences = [
   {
-    company: "Edelweiss Life Insurance",
-    title: "GenAI Engineer Intern",
-    date: "May 2025 - Aug 2025",
-    year: "2025",
-    location: "Mumbai, India",
-    width: 200,
-    height: 200,
-    logo: edelweissLogo,
-    bullets: [
-      "Enabled dynamic enterprise insights with a serverless RAG app using Claude 3.5 Sonnet on AWS Bedrock.",
-      "Built two Lambda functions with VPC-secured SageMaker/Bedrock inference and 99% API uptime.",
-      "Boosted SQL generation accuracy by 28% using Cohere embeddings in OpenSearch few-shot prompting.",
-      "Fine-tuned CodeLlama-7B-Instruct via QLoRA; deployed with TensorRT-LLM for 1.8x speed, 50% memory cut.",
-      "Streamlit frontend + API Gateway served plots and tables to 3,000+ daily users.",
-    ],
-    tech: ["RAG", "LLM", "NVIDIA TensorRT-LLM", "Claude 3.5 Sonnet", "Llama", "Promp Engineering", "AWS", "Lambda", "SageMaker", "Bedrock", "HuggingFace", "Cohere", "OpenSearch", "Streamlit", "API Gateway", "Python", "Bash", "Docker"],
-  },
+  company: "Edelweiss Life Insurance",
+  title: "GenAI Engineer Intern",
+  date: "May 2025 - Aug 2025",
+  year: "2025",
+  location: "Mumbai, India",
+  width: 200,
+  height: 200,
+  logo: edelweissLogo,
+  projects: [
+    {
+      title: "GenAI-powered Business Insights and Visualization",
+      bullets: [
+        "Built a serverless RAG app on AWS Bedrock (Claude 3.5 Sonnet) enabling real-time conversational access to AWS Data Lake, replacing 200+ static BI dashboards and enabling Rs. 300,000+ in estimated annual operational cost savings.",
+        "Engineered Lambda functions for query validation, Redshift schema extraction, OpenSearch retrieval, and LLM inference; achieved 99% API uptime and reduced 8,700+ annual emails per user via automation.",
+        "Boosted SQL generation accuracy by 28% using Cohere embeddings + OpenSearch retrieval for few-shot prompting. Integrated API Gateway + Streamlit UI, serving 1.5K+ daily active users with real-time tables/visuals.",
+        "Fine-tuned CodeLlama-7B-Instruct using QLoRA and deployed it on NVIDIA TensorRT-LLM optimized SageMaker endpoints, accelerating inference by 1.8x and reduce memory usage by 50%."
+      ],
+    },
+    {
+      title: "Data Science Project - Policy Grievance and Mis-selling Prediction",
+      bullets: [
+        "Productionized a top-5 LightGBM + CATBoost ensemble to flag grievance/mis-selling risk across 809K+ policies, surfacing 97% of grievance cases in the top decile, empowering agents to preempt complaints.",
+        "Developed a scalable ML pipeline on AWS SageMaker, containerized with ECR, and orchestrated automated weekly predictions reports with AWS Lambda and AWS EventBridge Scheduler cron jobs, reducing prediction latency by 3x.",
+        "Operationalized model outputs by tagging high-risk users as “Handle with Care” in internal systems and routing them to trained agents in real time, driving a 23.8% drop in 3-month rolling average of complaints."
+      ],
+    }
+  ],
+  tech: ["RAG", "LLM", "NVIDIA TensorRT-LLM", "Claude 3.5 Sonnet", "Llama", "Prompt Engineering", "AWS", "Lambda", "SageMaker", "Bedrock", "HuggingFace", "Cohere", "OpenSearch", "Streamlit", "API Gateway", "Python", "Bash", "Docker", "LightGBM", "CatBoost", "EventBridge", "ECR"],
+},
   {
     company: "Info Origin Inc.",
     title: "Data Science Intern",
@@ -41,8 +53,9 @@ const experiences = [
     location: "Remote",
     logo: infoOriginLogo,
     bullets: [
-      "Trained and deployed an NER model (spaCy, Doccano, Streamlit) to parse resumes, reducing screening time by 40%.",
-      "Built and tuned a 5-layer NN with NNLM embeddings (PyTorch) to classify 2,200+ articles at 96.4% accuracy.",
+      "Deployed a custom spaCy NER model with Streamlit UI to auto-extract key resume entities, cutting HR candidate screening time by 40% and streamlining early-stage hiring workflows.",
+      "Optimized hyperparameters for a custom 5-layer neural network using Google’s NNLM embeddings and PyTorch TensorDataset/DataLoader for efficient batching/shuffling of 2,200+ articles, achieving 96.4% accuracy in news classification.",
+      "Conducted organization-wide technical workshops on Neural Networks, Attention Mechanisms, Transformer architectures, and LLMs.",
     ],
     tech: ["spaCy", "PyTorch", "Named Entity Recognition", "Jupyter", "Google Colab", "TensorFlow",  "BERT", "RoBERTa", "Scikit-Learn", "Doccano", "Streamlit", "Transformers", "NLP", "Stemming", "Lemmatization", "Seaborn", "Matplotlib", "Bayesian Optimization"],
   },
@@ -56,8 +69,9 @@ const experiences = [
     height: 100,
     logo: hdfcLogo,
     bullets: [
-      "Built Flask-based Python API to clean, encrypt, and store Excel premium quotes in Oracle DB.",
-      "Automated ETL pipeline with Pandas, SQLAlchemy, NumPy - reducing quote processing time by 97.8%.",
+      "Automated ingestion of insurance quote data from Excel to Oracle DB using Flask API, SQLAlchemy, Pandas, and Numpy, cutting processing time by 97.8% (1.5 hours to 2 minutes), enabling instant policy generation for underwriters.",
+      "Implemented a 4-factor validation pipeline (file format, encrypted token, template schema, metadata check) to detect obsolete or tampered Excel templates, reducing manual entry errors and rejections by 90%.",
+      "Designed a redundancy management system using an isactive flag for lead IDs, eliminating duplicate entries from reuploads.",
     ],
     tech: ["Flask", "Oracle Database", "Pandas", "NumPy", "SQLALchemy", "API"],
   },
@@ -170,11 +184,24 @@ export const WorkExperienceSection = () => {
                           </div>
                         </div>
                         <hr className="my-4 border-white/10" />
-                        <ul className="list-disc pl-6 space-y-2 text-white/80">
-                          {exp.bullets.map((b, i) => (
-                            <li key={i} className="text-sm md:text-base text-white/50 leading-relaxed">{b}</li>
-                          ))}
-                        </ul>
+                        {exp.projects ? (
+                          exp.projects.map((proj, pIdx) => (
+                            <div key={pIdx} className="mb-6">
+                              <h4 className="font-semibold text-white/80 mb-2">{proj.title}</h4>
+                              <ul className="list-disc pl-6 space-y-2 text-white/80">
+                                {proj.bullets.map((b, i) => (
+                                  <li key={i} className="text-sm md:text-base text-white/50 leading-relaxed">{b}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))
+                        ) : (
+                          <ul className="list-disc pl-6 space-y-2 text-white/80">
+                            {exp.bullets.map((b, i) => (
+                              <li key={i} className="text-sm md:text-base text-white/50 leading-relaxed">{b}</li>
+                            ))}
+                          </ul>
+                        )}
                         {exp.tech && exp.tech.length > 0 && (
                           <div className="flex flex-wrap gap-2 mt-4">
                             {exp.tech.map((tool, i) => (

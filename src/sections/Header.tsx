@@ -37,9 +37,17 @@ export const Header = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       setActiveSection(sectionId); // Set active section immediately on click
-      section.scrollIntoView({ behavior: "smooth" });
+
+      let yOffset = -80; // Adjust this number based on your header height
+      if (sectionId === "projects") {
+        yOffset = -10; // Adjust this value to your desired scroll offset for "Projects"
+      }
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +71,7 @@ export const Header = () => {
           // Define what "in view" means for a section
           // A section is "in view" if its top is visible AND
           // its bottom is not too far up, or if the scroll position is within it.
-          const buffer = windowHeight * 0.3; // Consider section active when 30% of it is in view from the top
+          const buffer = windowHeight * 0.5; // Consider section active when 30% of it is in view from the top
 
           const isSectionVisible =
             (scrollPosition + windowHeight > sectionTop + buffer) &&

@@ -5,6 +5,7 @@ import Image from "next/image";
 import ArrawUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const portfolioProjects = [
   {
@@ -52,13 +53,11 @@ export const ProjectsSection = () => {
   return (
     <section className="pb-48 md:mb-16 sm:mb-15 lg:py-32 lg:mb-0 lg:pb-30">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="lg:mt-0 mt-10 uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">Exploring Technologies</p>
-        </div>
-        <h1 className="font-serif text-3xl md:text-5xl text-center mt-6">Featured Projects</h1>
-        <p className="text-center md:text-lg lg:text-xl text-white/60 mt-4 max-w-md mx-auto">
-          Constantly learning, experimenting, and evolving with every line of code.
-        </p>
+        <SectionHeader
+                  eyebrow="Exploring Technologies"
+                  title="Featured Projects"
+                  description="Constantly learning, experimenting, and evolving with every line of code."
+        />
         <div className="flex flex-col mt-0 md:mt-0 lg:mt-10 gap-7">
           {portfolioProjects.map((project, projectIndex) => (
             <Card
