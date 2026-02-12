@@ -161,12 +161,6 @@ const hobbies = [
     left: "30%",
     top: "12%",
   },
-  {
-    title: "Ravu",
-    emoji: "💙",
-    left: "80%",
-    top: "10%",
-  },
 ]
 
 export const AboutSection = () => {
